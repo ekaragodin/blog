@@ -1,11 +1,26 @@
 {
     "url": "https://blog.personal.ekaragodin-s4azn.wpcp-demo.run",
+    "server": {
+        "port": 2368,
+        "host": "0.0.0.0"
+    },
     "database": {
         "client": "sqlite3",
         "connection": {
-            "filename": "content/data/ghost.db"
-        },
-        "useNullAsDefault": true,
-        "debug": false
+            "filename": "/var/lib/ghost/content/data/ghost.db"
+        }
+    },
+    "mail": {
+        "transport": "Direct"
+    },
+    "logging": {
+        "transports": [
+            "file",
+            "stdout"
+        ]
+    },
+    "process": "systemd",
+    "paths": {
+        "contentPath": "/var/lib/ghost/content"
     }
 }
